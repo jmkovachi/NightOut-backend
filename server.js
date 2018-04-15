@@ -1,7 +1,6 @@
 var express = require('express');
 var app = express();
 require('dotenv').config();
-var pl = require('./Util/placesWrapper.js');
 var api = require('./Routes/api.js');
 
 app.use(express.json());

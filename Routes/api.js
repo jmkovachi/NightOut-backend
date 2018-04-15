@@ -8,12 +8,12 @@ We take the location specified in req parameters and use that to query the
 Google Places API for our desired location.
 */
 router.post('/places', (req,res) => {
-  console.log(req);
-  pl.placesQuery(req.body.location.split(' ').join('%20')).then(result => {
-    console.log(result);
-    res.send(JSON.stringify(result.results[0].geometry.location));
+  pl.placesQuery(req.body.location).then(result => {
+    result = JSON.parse(result);
+    res.json(result.results[0].geometry.location);
   })
   .catch(error => {
+    console.log(error);
     res.send(error);
   });
 });
