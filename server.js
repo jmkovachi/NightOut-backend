@@ -6,7 +6,7 @@ var api = require('./Routes/api.js');
 
 app.use(express.json());
 
-//app.listen(4000);
+app.listen(process.env.PORT || 4000);
 
 app.get('/', (req,res) => {
   res.send('hello world');
@@ -14,7 +14,7 @@ app.get('/', (req,res) => {
 
 app.use('/api', api);
 
-console.log('Listening on port 4000');
+console.log('Listening on port ' + (process.env.PORT || 4000));
 
 /**
  * Exports express
