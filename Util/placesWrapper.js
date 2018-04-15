@@ -13,7 +13,6 @@ var placesQuery = (query) => {
 
     request(options, function (error, response, body) {
       if (error) reject(error);
-      console.log(body);
       resolve(body);
     });
   });

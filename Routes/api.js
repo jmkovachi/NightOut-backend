@@ -10,6 +10,7 @@ Google Places API for our desired location.
 router.post('/places', (req,res) => {
   console.log(req);
   pl.placesQuery(req.body.location.split(' ').join('%20')).then(result => {
+    console.log(result);
     res.send(JSON.stringify(result.results[0].geometry.location));
   })
   .catch(error => {
