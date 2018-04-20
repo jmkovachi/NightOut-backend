@@ -4,8 +4,8 @@ var transform = (db_markers) => {
       resolve(db_markers.map(marker => {
         return {
           coordinate : {
-            latitude : marker.latitude,
-            longitude : marker.longitude,
+            latitude : marker.location.coordinates[0],
+            longitude : marker.location.coordinates[1],
           },
           key : marker.key,
           color : marker.color,

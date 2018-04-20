@@ -8,8 +8,8 @@ var returnMongo = (url) => {
                })
                .catch(err => {
                  reject(err);
-               })
+               });
   });
-}
+};
 
 module.exports.returnMongo = returnMongo;
